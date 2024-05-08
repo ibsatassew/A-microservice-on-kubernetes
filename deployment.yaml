@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enhanced-microservice-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: enhanced-microservice
+  template:
+    metadata:
+      labels:
+        app: enhanced-microservice
+    spec:
+      containers:
+        - name: enhanced-microservice
+          image: igeleta/enhanced-microservice:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DATA_MICROSERVICE
+              value: MyOtherMicroservice

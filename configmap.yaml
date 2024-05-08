@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: enhanced-microservice-configmap
+data:
+  SOME_CONFIG: some-value
+  ANOTHER_CONFIG: another-value
